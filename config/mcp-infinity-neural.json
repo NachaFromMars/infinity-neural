@@ -1,0 +1,12 @@
+{
+  "mcp": {
+    "servers": {
+      "infinity-neural": {
+        "command": "nmem-mcp",
+        "env": {
+          "NEURALMEMORY_BRAIN": "openclaw-brain"
+        }
+      }
+    }
+  }
+}
