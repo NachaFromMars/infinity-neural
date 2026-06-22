@@ -1,0 +1,44 @@
+# Infinity Neural — Brain defaults
+# Copy to ~/.neuralmemory/config.toml to override
+
+[brain]
+name = "openclaw-brain"
+
+[decay]
+enabled = false          # InfinityNeural: no decay
+rate = 0.0
+
+[compression]
+hot_max_age_days = 30.0
+warm_max_age_days = 180.0
+hot_min_frequency = 5
+
+[activation]
+threshold = 0.08         # Lower = more memories activated
+max_iterations = 25
+noise_floor = 0.01       # Preserve weak activations
+dampening_factor = 0.90
+
+[fiber]
+time_factor_min = 0.5    # Never below 0.5 (gentle)
+time_factor_rate = 0.002 # Slow decay: 0.94 at 30d, 0.58 at 365d
+
+[relevance]
+activation_weight = 0.30
+frequency_weight = 0.20
+recency_weight = 0.20
+synapse_weight = 0.15
+tier_weight = 0.15
+eternal_bonus = 0.50
+anchor_bonus = 0.50
+
+[budget]
+hot_pct = 0.60           # 60% tokens for HOT
+warm_pct = 0.30          # 30% for WARM
+cold_pct = 0.10          # 10% for COLD
+
+[vietnamese]
+enabled = true
+compounds_count = 200    # Built-in compound dictionary
+extended_stopwords = true
+tone_strip = true        # Enable fuzzy tone matching
